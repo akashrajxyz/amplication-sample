@@ -71,7 +71,7 @@ model Product {
 model Organisation {
   createdAt        DateTime @default(now())
   id               String   @id @default(cuid())
-  organisationName String   @unique
+  organisationName String
   updatedAt        DateTime @updatedAt
   users            User[]
 }
