@@ -7,7 +7,7 @@ export const swaggerDocumentOptions = new DocumentBuilder()
   .setDescription(
     'Sample application for e-commerce\n\n## Congratulations! Your application is ready.\n  \nPlease note that all endpoints are secured with HTTP Basic authentication.\nBy default, your app comes with one user with the username "admin" and password "admin".\nLearn more in [our docs](https://docs.amplication.com)'
   )
-  .setVersion("xuwd61lx")
+  .setVersion("t5m700by")
   .addBasicAuth()
   .build();
 
