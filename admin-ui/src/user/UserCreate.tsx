@@ -5,13 +5,10 @@ import {
   SimpleForm,
   CreateProps,
   TextInput,
-  ReferenceInput,
-  SelectInput,
   PasswordInput,
   SelectArrayInput,
 } from "react-admin";
 
-import { OrganisationTitle } from "../organisation/OrganisationTitle";
 import { ROLES_OPTIONS } from "../user/RolesOptions";
 
 export const UserCreate = (props: CreateProps): React.ReactElement => {
@@ -20,13 +17,6 @@ export const UserCreate = (props: CreateProps): React.ReactElement => {
       <SimpleForm>
         <TextInput label="First Name" source="firstName" />
         <TextInput label="Last Name" source="lastName" />
-        <ReferenceInput
-          source="organisation.id"
-          reference="Organisation"
-          label="Organisations"
-        >
-          <SelectInput optionText={OrganisationTitle} />
-        </ReferenceInput>
         <PasswordInput label="Password" source="password" />
         <SelectArrayInput
           source="roles"
