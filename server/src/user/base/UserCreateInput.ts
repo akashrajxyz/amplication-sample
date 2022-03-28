@@ -11,9 +11,7 @@ https://docs.amplication.com/docs/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsString, IsOptional, ValidateNested } from "class-validator";
-import { OrganisationWhereUniqueInput } from "../../organisation/base/OrganisationWhereUniqueInput";
-import { Type } from "class-transformer";
+import { IsString, IsOptional } from "class-validator";
 @InputType()
 class UserCreateInput {
   @ApiProperty({
@@ -37,18 +35,6 @@ class UserCreateInput {
     nullable: true,
   })
   lastName?: string | null;
-
-  @ApiProperty({
-    required: false,
-    type: () => OrganisationWhereUniqueInput,
-  })
-  @ValidateNested()
-  @Type(() => OrganisationWhereUniqueInput)
-  @IsOptional()
-  @Field(() => OrganisationWhereUniqueInput, {
-    nullable: true,
-  })
-  organisation?: OrganisationWhereUniqueInput | null;
 
   @ApiProperty({
     required: true,

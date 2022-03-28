@@ -43,7 +43,7 @@ class OrganisationOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
-  organisationName?: SortOrder;
+  name?: SortOrder;
 
   @ApiProperty({
     required: false,

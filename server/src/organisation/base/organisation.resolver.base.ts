@@ -25,8 +25,6 @@ import { DeleteOrganisationArgs } from "./DeleteOrganisationArgs";
 import { OrganisationFindManyArgs } from "./OrganisationFindManyArgs";
 import { OrganisationFindUniqueArgs } from "./OrganisationFindUniqueArgs";
 import { Organisation } from "./Organisation";
-import { UserFindManyArgs } from "../../user/base/UserFindManyArgs";
-import { User } from "../../user/base/User";
 import { OrganisationService } from "../organisation.service";
 
 @graphql.Resolver(() => Organisation)
@@ -204,31 +202,5 @@ export class OrganisationResolverBase {
       }
       throw error;
     }
-  }
-
-  @graphql.ResolveField(() => [User])
-  @nestAccessControl.UseRoles({
-    resource: "Organisation",
-    action: "read",
-    possession: "any",
-  })
-  async users(
-    @graphql.Parent() parent: Organisation,
-    @graphql.Args() args: UserFindManyArgs,
-    @gqlUserRoles.UserRoles() userRoles: string[]
-  ): Promise<User[]> {
-    const permission = this.rolesBuilder.permission({
-      role: userRoles,
-      action: "read",
-      possession: "any",
-      resource: "User",
-    });
-    const results = await this.service.findUsers(parent.id, args);
-
-    if (!results) {
-      return [];
-    }
-
-    return results.map((result) => permission.filter(result));
   }
 }
