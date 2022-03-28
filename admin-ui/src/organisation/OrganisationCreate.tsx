@@ -1,29 +1,11 @@
 import * as React from "react";
-
-import {
-  Create,
-  SimpleForm,
-  CreateProps,
-  TextInput,
-  ReferenceArrayInput,
-  SelectArrayInput,
-} from "react-admin";
-
-import { UserTitle } from "../user/UserTitle";
+import { Create, SimpleForm, CreateProps, TextInput } from "react-admin";
 
 export const OrganisationCreate = (props: CreateProps): React.ReactElement => {
   return (
     <Create {...props}>
       <SimpleForm>
-        <TextInput label="organisation_name" source="organisationName" />
-        <ReferenceArrayInput
-          source="user"
-          reference="User"
-          parse={(value: any) => value && value.map((v: any) => ({ id: v }))}
-          format={(value: any) => value && value.map((v: any) => v.id)}
-        >
-          <SelectArrayInput optionText={UserTitle} />
-        </ReferenceArrayInput>
+        <TextInput label="name" source="name" />
       </SimpleForm>
     </Create>
   );

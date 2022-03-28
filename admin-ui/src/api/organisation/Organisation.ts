@@ -1,9 +1,6 @@
-import { User } from "../user/User";
-
 export type Organisation = {
   createdAt: Date;
   id: string;
-  organisationName: string;
+  name: string;
   updatedAt: Date;
-  users?: Array<User>;
 };
