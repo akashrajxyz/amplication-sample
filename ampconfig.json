@@ -1,19 +1,19 @@
 {
   "dataServiceGeneratorVersion": "0.12.2",
   "appInfo": {
-    "name": "Sample app",
-    "description": "Sample application for e-commerce",
-    "version": "xuwd61lx",
-    "id": "cl15yzu6e17828701s6s1b589cx",
-    "url": "https://app.amplication.com/cl15yzu6e17828701s6s1b589cx",
+    "name": "My app",
+    "description": "",
+    "version": "8bnl6okc",
+    "id": "cl1agkhto10393201s6yf3w6anm",
+    "url": "https://app.amplication.com/cl1agkhto10393201s6yf3w6anm",
     "settings": {
       "dbHost": "localhost",
       "dbName": "",
       "dbPassword": "admin",
       "dbPort": 5432,
       "dbUser": "admin",
-      "appId": "cl15yzu6e17828701s6s1b589cx",
-      "authProvider": "Http"
+      "appId": "cl1agkhto10393201s6yf3w6anm",
+      "authProvider": "Jwt"
     }
   }
 }
