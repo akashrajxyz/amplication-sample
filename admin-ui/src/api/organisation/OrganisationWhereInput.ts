@@ -1,8 +1,7 @@
 import { StringFilter } from "../../util/StringFilter";
-import { UserListRelationFilter } from "../user/UserListRelationFilter";
+import { StringNullableFilter } from "../../util/StringNullableFilter";
 
 export type OrganisationWhereInput = {
   id?: StringFilter;
-  organisationName?: StringFilter;
-  users?: UserListRelationFilter;
+  name?: StringNullableFilter;
 };

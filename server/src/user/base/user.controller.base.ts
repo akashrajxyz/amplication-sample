@@ -27,7 +27,7 @@ import { UserWhereUniqueInput } from "./UserWhereUniqueInput";
 import { UserFindManyArgs } from "./UserFindManyArgs";
 import { UserUpdateInput } from "./UserUpdateInput";
 import { User } from "./User";
-@swagger.ApiBasicAuth()
+@swagger.ApiBearerAuth()
 export class UserControllerBase {
   constructor(
     protected readonly service: UserService,
@@ -70,27 +70,12 @@ export class UserControllerBase {
       );
     }
     return await this.service.create({
-      data: {
-        ...data,
-
-        organisation: data.organisation
-          ? {
-              connect: data.organisation,
-            }
-          : undefined,
-      },
+      data: data,
       select: {
         createdAt: true,
         firstName: true,
         id: true,
         lastName: true,
-
-        organisation: {
-          select: {
-            id: true,
-          },
-        },
-
         roles: true,
         updatedAt: true,
         username: true,
@@ -131,13 +116,6 @@ export class UserControllerBase {
         firstName: true,
         id: true,
         lastName: true,
-
-        organisation: {
-          select: {
-            id: true,
-          },
-        },
-
         roles: true,
         updatedAt: true,
         username: true,
@@ -177,13 +155,6 @@ export class UserControllerBase {
         firstName: true,
         id: true,
         lastName: true,
-
-        organisation: {
-          select: {
-            id: true,
-          },
-        },
-
         roles: true,
         updatedAt: true,
         username: true,
@@ -238,27 +209,12 @@ export class UserControllerBase {
     try {
       return await this.service.update({
         where: params,
-        data: {
-          ...data,
-
-          organisation: data.organisation
-            ? {
-                connect: data.organisation,
-              }
-            : undefined,
-        },
+        data: data,
         select: {
           createdAt: true,
           firstName: true,
           id: true,
           lastName: true,
-
-          organisation: {
-            select: {
-              id: true,
-            },
-          },
-
           roles: true,
           updatedAt: true,
           username: true,
@@ -299,13 +255,6 @@ export class UserControllerBase {
           firstName: true,
           id: true,
           lastName: true,
-
-          organisation: {
-            select: {
-              id: true,
-            },
-          },
-
           roles: true,
           updatedAt: true,
           username: true,
