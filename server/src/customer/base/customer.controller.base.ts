@@ -30,7 +30,7 @@ import { Customer } from "./Customer";
 import { OrderFindManyArgs } from "../../order/base/OrderFindManyArgs";
 import { Order } from "../../order/base/Order";
 import { OrderWhereUniqueInput } from "../../order/base/OrderWhereUniqueInput";
-@swagger.ApiBasicAuth()
+@swagger.ApiBearerAuth()
 export class CustomerControllerBase {
   constructor(
     protected readonly service: CustomerService,
